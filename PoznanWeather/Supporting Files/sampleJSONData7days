@@ -1,0 +1,185 @@
+{
+"city": {
+"id": 7530858,
+"name": "Poznań",
+"coord": {
+"lon": 16.9015,
+"lat": 52.4006
+},
+"country": "PL",
+"population": 0
+},
+"cod": "200",
+"message": 0.0550989,
+"cnt": 7,
+"list": [
+{
+"dt": 1528106400,
+"temp": {
+"day": 295.15,
+"min": 293.77,
+"max": 295.15,
+"night": 293.77,
+"eve": 295.15,
+"morn": 295.15
+},
+"pressure": 1012.5,
+"humidity": 55,
+"weather": [
+{
+"id": 803,
+"main": "Clouds",
+"description": "broken clouds",
+"icon": "04d"
+}
+],
+"speed": 2.96,
+"deg": 300,
+"clouds": 64
+},
+{
+"dt": 1528192800,
+"temp": {
+"day": 296.77,
+"min": 289.46,
+"max": 298.69,
+"night": 289.46,
+"eve": 298.42,
+"morn": 289.98
+},
+"pressure": 1013.68,
+"humidity": 67,
+"weather": [
+{
+"id": 800,
+"main": "Clear",
+"description": "sky is clear",
+"icon": "01d"
+}
+],
+"speed": 4.21,
+"deg": 305,
+"clouds": 0
+},
+{
+"dt": 1528279200,
+"temp": {
+"day": 288.77,
+"min": 283.74,
+"max": 292.18,
+"night": 287.55,
+"eve": 292.18,
+"morn": 283.74
+},
+"pressure": 1026.84,
+"humidity": 51,
+"weather": [
+{
+"id": 800,
+"main": "Clear",
+"description": "sky is clear",
+"icon": "01d"
+}
+],
+"speed": 6.27,
+"deg": 91,
+"clouds": 0
+},
+{
+"dt": 1528365600,
+"temp": {
+"day": 292.7,
+"min": 284.52,
+"max": 298.18,
+"night": 294.09,
+"eve": 298.18,
+"morn": 284.52
+},
+"pressure": 1022.15,
+"humidity": 44,
+"weather": [
+{
+"id": 800,
+"main": "Clear",
+"description": "sky is clear",
+"icon": "01d"
+}
+],
+"speed": 7.82,
+"deg": 123,
+"clouds": 0
+},
+{
+"dt": 1528452000,
+"temp": {
+"day": 300.96,
+"min": 291.84,
+"max": 300.96,
+"night": 291.84,
+"eve": 299.99,
+"morn": 292.88
+},
+"pressure": 1009.96,
+"humidity": 0,
+"weather": [
+{
+"id": 500,
+"main": "Rain",
+"description": "light rain",
+"icon": "10d"
+}
+],
+"speed": 2.39,
+"deg": 60,
+"clouds": 15
+},
+{
+"dt": 1528538400,
+"temp": {
+"day": 298.75,
+"min": 288.48,
+"max": 298.75,
+"night": 288.48,
+"eve": 296.86,
+"morn": 291.36
+},
+"pressure": 1013.19,
+"humidity": 0,
+"weather": [
+{
+"id": 500,
+"main": "Rain",
+"description": "light rain",
+"icon": "10d"
+}
+],
+"speed": 5.37,
+"deg": 56,
+"clouds": 12
+},
+{
+"dt": 1528624800,
+"temp": {
+"day": 299,
+"min": 290.88,
+"max": 299,
+"night": 290.88,
+"eve": 297.55,
+"morn": 291.53
+},
+"pressure": 1014.67,
+"humidity": 0,
+"weather": [
+{
+"id": 800,
+"main": "Clear",
+"description": "sky is clear",
+"icon": "01d"
+}
+],
+"speed": 4.7,
+"deg": 122,
+"clouds": 0
+}
+]
+}

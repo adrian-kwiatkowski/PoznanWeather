@@ -1,5 +1,5 @@
 //
-//  PoznanWeatherTests.swift
+//  WeatherDataModelTests.swift
 //  PoznanWeatherTests
 //
 //  Created by Adrian Kwiatkowski on 04/06/2018.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import PoznanWeather
 
-class PoznanWeatherTests: XCTestCase {
+class WeatherDataModelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,14 @@ class PoznanWeatherTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testInit_ModelCreatedWithAllProperties() {
+        let modelUnderTest = WeatherDataModel(date: 1528106400, temperature: 295.15, pressure: 1012.5, weatherIcon: "04d")
+        
+        XCTAssertNotNil(modelUnderTest)
+        XCTAssertEqual(modelUnderTest.date, 1528106400)
+        XCTAssertEqual(modelUnderTest.temperature, 295.15)
+        XCTAssertEqual(modelUnderTest.pressure, 1012.5)
+        XCTAssertEqual(modelUnderTest.weatherIcon, "04d")
     }
     
 }

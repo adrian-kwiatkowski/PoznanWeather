@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		B16721C520C58BE20086B47A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16721C420C58BE20086B47A /* AppDelegate.swift */; };
-		B16721C720C58BE20086B47A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16721C620C58BE20086B47A /* ViewController.swift */; };
 		B16721CA20C58BE20086B47A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16721C820C58BE20086B47A /* Main.storyboard */; };
 		B16721CC20C58BE40086B47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16721CB20C58BE40086B47A /* Assets.xcassets */; };
 		B16721CF20C58BE40086B47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16721CD20C58BE40086B47A /* LaunchScreen.storyboard */; };
-		B16721DA20C58BE40086B47A /* PoznanWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16721D920C58BE40086B47A /* PoznanWeatherTests.swift */; };
+		B1C30B9420C5CDE500806FF4 /* sampleJSONData1day in Resources */ = {isa = PBXBuildFile; fileRef = B1C30B9320C5CDE500806FF4 /* sampleJSONData1day */; };
+		B1C30B9620C5CDF400806FF4 /* sampleJSONData7days in Resources */ = {isa = PBXBuildFile; fileRef = B1C30B9520C5CDF400806FF4 /* sampleJSONData7days */; };
+		B1C30B9820C5D0EF00806FF4 /* WeatherDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9720C5D0EF00806FF4 /* WeatherDataModelTests.swift */; };
+		B1C30B9A20C5D32600806FF4 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9920C5D32600806FF4 /* WeatherDataModel.swift */; };
+		B1C30B9F20C5D71000806FF4 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */; };
+		B1C30BA120C5DD1F00806FF4 /* WeatherManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30BA020C5DD1F00806FF4 /* WeatherManagerTests.swift */; };
+		B1C30BA320C5DDB600806FF4 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30BA220C5DDB600806FF4 /* WeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +33,19 @@
 /* Begin PBXFileReference section */
 		B16721C120C58BE20086B47A /* PoznanWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoznanWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16721C420C58BE20086B47A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B16721C620C58BE20086B47A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B16721C920C58BE20086B47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B16721CB20C58BE40086B47A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B16721CE20C58BE40086B47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B16721D020C58BE40086B47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B16721D520C58BE40086B47A /* PoznanWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoznanWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B16721D920C58BE40086B47A /* PoznanWeatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoznanWeatherTests.swift; sourceTree = "<group>"; };
 		B16721DB20C58BE40086B47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1C30B9320C5CDE500806FF4 /* sampleJSONData1day */ = {isa = PBXFileReference; lastKnownFileType = text; path = sampleJSONData1day; sourceTree = "<group>"; };
+		B1C30B9520C5CDF400806FF4 /* sampleJSONData7days */ = {isa = PBXFileReference; lastKnownFileType = text; path = sampleJSONData7days; sourceTree = "<group>"; };
+		B1C30B9720C5D0EF00806FF4 /* WeatherDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModelTests.swift; sourceTree = "<group>"; };
+		B1C30B9920C5D32600806FF4 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
+		B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		B1C30BA020C5DD1F00806FF4 /* WeatherManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManagerTests.swift; sourceTree = "<group>"; };
+		B1C30BA220C5DDB600806FF4 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +87,10 @@
 		B16721C320C58BE20086B47A /* PoznanWeather */ = {
 			isa = PBXGroup;
 			children = (
-				B16721C420C58BE20086B47A /* AppDelegate.swift */,
-				B16721C620C58BE20086B47A /* ViewController.swift */,
-				B16721C820C58BE20086B47A /* Main.storyboard */,
-				B16721CB20C58BE40086B47A /* Assets.xcassets */,
-				B16721CD20C58BE40086B47A /* LaunchScreen.storyboard */,
-				B16721D020C58BE40086B47A /* Info.plist */,
+				B1C30B9B20C5D32D00806FF4 /* Views */,
+				B1C30B9C20C5D33100806FF4 /* Models */,
+				B1C30B9D20C5D33900806FF4 /* Controllers */,
+				B1C30B9220C5CDAA00806FF4 /* Supporting Files */,
 			);
 			path = PoznanWeather;
 			sourceTree = "<group>";
@@ -90,10 +98,49 @@
 		B16721D820C58BE40086B47A /* PoznanWeatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				B16721D920C58BE40086B47A /* PoznanWeatherTests.swift */,
 				B16721DB20C58BE40086B47A /* Info.plist */,
+				B1C30B9720C5D0EF00806FF4 /* WeatherDataModelTests.swift */,
+				B1C30BA020C5DD1F00806FF4 /* WeatherManagerTests.swift */,
 			);
 			path = PoznanWeatherTests;
+			sourceTree = "<group>";
+		};
+		B1C30B9220C5CDAA00806FF4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B16721D020C58BE40086B47A /* Info.plist */,
+				B16721CB20C58BE40086B47A /* Assets.xcassets */,
+				B16721C420C58BE20086B47A /* AppDelegate.swift */,
+				B1C30B9320C5CDE500806FF4 /* sampleJSONData1day */,
+				B1C30B9520C5CDF400806FF4 /* sampleJSONData7days */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1C30B9B20C5D32D00806FF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B16721C820C58BE20086B47A /* Main.storyboard */,
+				B16721CD20C58BE40086B47A /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B1C30B9C20C5D33100806FF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1C30B9920C5D32600806FF4 /* WeatherDataModel.swift */,
+				B1C30BA220C5DDB600806FF4 /* WeatherManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B1C30B9D20C5D33900806FF4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +196,7 @@
 					};
 					B16721D420C58BE40086B47A = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 						TestTargetID = B16721C020C58BE20086B47A;
 					};
 				};
@@ -177,9 +225,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1C30B9620C5CDF400806FF4 /* sampleJSONData7days in Resources */,
 				B16721CF20C58BE40086B47A /* LaunchScreen.storyboard in Resources */,
 				B16721CC20C58BE40086B47A /* Assets.xcassets in Resources */,
 				B16721CA20C58BE20086B47A /* Main.storyboard in Resources */,
+				B1C30B9420C5CDE500806FF4 /* sampleJSONData1day in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +247,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B16721C720C58BE20086B47A /* ViewController.swift in Sources */,
 				B16721C520C58BE20086B47A /* AppDelegate.swift in Sources */,
+				B1C30B9F20C5D71000806FF4 /* MainCollectionViewController.swift in Sources */,
+				B1C30BA320C5DDB600806FF4 /* WeatherManager.swift in Sources */,
+				B1C30B9A20C5D32600806FF4 /* WeatherDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B16721DA20C58BE40086B47A /* PoznanWeatherTests.swift in Sources */,
+				B1C30BA120C5DD1F00806FF4 /* WeatherManagerTests.swift in Sources */,
+				B1C30B9820C5D0EF00806FF4 /* WeatherDataModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
-				INFOPLIST_FILE = PoznanWeather/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PoznanWeather/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -368,7 +421,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -378,7 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
-				INFOPLIST_FILE = PoznanWeather/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/PoznanWeather/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,7 +439,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -395,6 +448,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = PoznanWeatherTests/Info.plist;
@@ -405,6 +459,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeatherTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoznanWeather.app/PoznanWeather";
@@ -416,6 +471,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = PoznanWeatherTests/Info.plist;
