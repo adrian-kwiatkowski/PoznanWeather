@@ -11,8 +11,6 @@
 		B16721CA20C58BE20086B47A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16721C820C58BE20086B47A /* Main.storyboard */; };
 		B16721CC20C58BE40086B47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B16721CB20C58BE40086B47A /* Assets.xcassets */; };
 		B16721CF20C58BE40086B47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16721CD20C58BE40086B47A /* LaunchScreen.storyboard */; };
-		B1C30B9420C5CDE500806FF4 /* sampleJSONData1day in Resources */ = {isa = PBXBuildFile; fileRef = B1C30B9320C5CDE500806FF4 /* sampleJSONData1day */; };
-		B1C30B9620C5CDF400806FF4 /* sampleJSONData7days in Resources */ = {isa = PBXBuildFile; fileRef = B1C30B9520C5CDF400806FF4 /* sampleJSONData7days */; };
 		B1C30B9820C5D0EF00806FF4 /* WeatherDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9720C5D0EF00806FF4 /* WeatherDataModelTests.swift */; };
 		B1C30B9A20C5D32600806FF4 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9920C5D32600806FF4 /* WeatherDataModel.swift */; };
 		B1C30B9F20C5D71000806FF4 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */; };
@@ -46,8 +44,6 @@
 		B16721D020C58BE40086B47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B16721D520C58BE40086B47A /* PoznanWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoznanWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16721DB20C58BE40086B47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1C30B9320C5CDE500806FF4 /* sampleJSONData1day */ = {isa = PBXFileReference; lastKnownFileType = text; path = sampleJSONData1day; sourceTree = "<group>"; };
-		B1C30B9520C5CDF400806FF4 /* sampleJSONData7days */ = {isa = PBXFileReference; lastKnownFileType = text; path = sampleJSONData7days; sourceTree = "<group>"; };
 		B1C30B9720C5D0EF00806FF4 /* WeatherDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModelTests.swift; sourceTree = "<group>"; };
 		B1C30B9920C5D32600806FF4 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
@@ -134,8 +130,6 @@
 				B16721D020C58BE40086B47A /* Info.plist */,
 				B16721CB20C58BE40086B47A /* Assets.xcassets */,
 				B16721C420C58BE20086B47A /* AppDelegate.swift */,
-				B1C30B9320C5CDE500806FF4 /* sampleJSONData1day */,
-				B1C30B9520C5CDF400806FF4 /* sampleJSONData7days */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -260,11 +254,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C30B9620C5CDF400806FF4 /* sampleJSONData7days in Resources */,
 				B16721CF20C58BE40086B47A /* LaunchScreen.storyboard in Resources */,
 				B16721CC20C58BE40086B47A /* Assets.xcassets in Resources */,
 				B16721CA20C58BE20086B47A /* Main.storyboard in Resources */,
-				B1C30B9420C5CDE500806FF4 /* sampleJSONData1day in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,10 +314,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PoznanWeather/Pods-PoznanWeather-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -507,7 +501,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = "$(SRCROOT)/PoznanWeather/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -523,7 +520,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = "$(SRCROOT)/PoznanWeather/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -541,7 +541,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = PoznanWeatherTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeatherTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -561,7 +565,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = PoznanWeatherTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeatherTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

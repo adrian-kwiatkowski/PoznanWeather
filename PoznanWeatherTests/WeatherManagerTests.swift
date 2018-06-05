@@ -12,7 +12,7 @@ import XCTest
 class WeatherManagerTests: XCTestCase {
     
     var sut: WeatherManager!
-    let exampleWeatherData = WeatherDataModel(date: 1528106400, temperature: 295.15, pressure: 1012.5, weatherIcon: "04d")
+    let exampleWeatherData = WeatherDataModel(date: "05/06/2018", avgTemperature: 295.15, pressure: 1012.5, weatherIcon: "04d", maxTemperature: 293.23, minTemperature: 292.22, humidity: 55, windSpeed: 2.96, windDirection: 300)
     
     override func setUp() {
         super.setUp()

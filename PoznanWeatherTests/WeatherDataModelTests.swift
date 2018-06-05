@@ -13,22 +13,27 @@ class WeatherDataModelTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
         super.tearDown()
     }
     
     func testInit_ModelCreatedWithAllProperties() {
-        let modelUnderTest = WeatherDataModel(date: 1528106400, temperature: 295.15, pressure: 1012.5, weatherIcon: "04d")
+        let modelUnderTest = WeatherDataModel(date: "05/06/2018", avgTemperature: 295.15, pressure: 1012.5, weatherIcon: "04d", maxTemperature: 293.23, minTemperature: 292.22, humidity: 55, windSpeed: 2.96, windDirection: 300)
         
         XCTAssertNotNil(modelUnderTest)
-        XCTAssertEqual(modelUnderTest.date, 1528106400)
-        XCTAssertEqual(modelUnderTest.temperature, 295.15)
+        XCTAssertEqual(modelUnderTest.date, "05/06/2018")
+        XCTAssertEqual(modelUnderTest.avgTemperature , 295.15)
         XCTAssertEqual(modelUnderTest.pressure, 1012.5)
         XCTAssertEqual(modelUnderTest.weatherIcon, "04d")
+        XCTAssertEqual(modelUnderTest.minTemperature, 292.22)
+        XCTAssertEqual(modelUnderTest.maxTemperature , 293.23)
+        XCTAssertEqual(modelUnderTest.humidity, 55)
+        XCTAssertEqual(modelUnderTest.windSpeed, 2.96)
+        XCTAssertEqual(modelUnderTest.windDirection, 300)
     }
     
 }

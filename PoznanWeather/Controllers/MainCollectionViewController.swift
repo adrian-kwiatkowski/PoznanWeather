@@ -12,14 +12,18 @@ private let reuseIdentifier = "weatherCellID"
 
 class MainCollectionViewController: UICollectionViewController {
 
+    var weatherManager: WeatherManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         
-        let weatherManager = WeatherManager()
-        weatherManager.getWeatherData()
+        weatherManager = WeatherManager()
+        weatherManager!.getWeatherData() {
+            self.collectionView?.reloadData()
+        }
         
     }
 
@@ -29,14 +33,12 @@ class MainCollectionViewController: UICollectionViewController {
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 0
+        return weatherManager!.daysArrayCount
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

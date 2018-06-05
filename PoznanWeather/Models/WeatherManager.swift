@@ -8,11 +8,10 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class WeatherManager {
-    let WEATHER_URL = "https://api.openweathermap.org/data/2.5/forecast/daily"
-    //https://api.openweathermap.org/data/2.5/forecast/daily?id=7530858&cnt=7&appid=ad4e521f54b155390c178acc59582f10
-    let APP_ID = "ad4e521f54b155390c178acc59582f10"
+    let weatherURL = "https://api.openweathermap.org/data/2.5/forecast/daily?id=7530858&cnt=7&appid=ad4e521f54b155390c178acc59582f10"
     
     var daysArrayCount: Int { return daysArray.count }
     var daysArray = [WeatherDataModel]()
@@ -25,21 +24,50 @@ class WeatherManager {
         return daysArray[index]
     }
     
-    func getWeatherData() {
-        let parameters = ["id" : "7530858", "cnt" : "7", "appid" : APP_ID]
-        Alamofire.request(WEATHER_URL, method: .get, parameters: parameters).responseJSON {
-            response in
-            if response.result.isSuccess {
-                //let weatherJSON : JSON = JSON(response.result.value!)
-                self.updateWeatherData()
-                print(response.result.value!)
-            } else {
-                print("Error \(String(describing: response.result.error))")
+    func getWeatherData(completion: @escaping () -> ()) {
+        Alamofire.request(weatherURL).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)["list"]
+                self.updateWeatherDataModel(json)
+                completion()
+            case .failure(let error):
+                print(error)
             }
         }
     }
     
-    func updateWeatherData() {
-        
+    func updateWeatherDataModel(_ json: JSON) {
+        for item in json.arrayValue {
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy"
+            let dateBeforeFormatting = Date(timeIntervalSince1970:TimeInterval(item["dt"].intValue))
+            let tmpDate = formatter.string(from: dateBeforeFormatting)
+            
+            let tmpAvgTemp = item["temp"]["day"].floatValue
+            let tmpPressure = item["pressure"].floatValue
+            let tmpWeatherIcon = item["weather"]["icon"].stringValue
+            let tmpMaxTemp = item["temp"]["max"].floatValue
+            let tmpMinTemp = item["temp"]["min"].floatValue
+            let tmpHumidity = item["humidity"].intValue
+            let tmpWindSpeed = item["speed"].floatValue
+            let tmpWindDirection = item["deg"].intValue
+            
+            let tempWeather = WeatherDataModel(date: tmpDate, avgTemperature: tmpAvgTemp, pressure: tmpPressure, weatherIcon: tmpWeatherIcon, maxTemperature: tmpMaxTemp, minTemperature: tmpMinTemp, humidity: tmpHumidity, windSpeed: tmpWindSpeed, windDirection: tmpWindDirection)
+            
+            addDay(data: tempWeather)
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
