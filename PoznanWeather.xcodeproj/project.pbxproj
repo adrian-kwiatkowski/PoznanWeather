@@ -18,6 +18,8 @@
 		B1C30B9F20C5D71000806FF4 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */; };
 		B1C30BA120C5DD1F00806FF4 /* WeatherManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30BA020C5DD1F00806FF4 /* WeatherManagerTests.swift */; };
 		B1C30BA320C5DDB600806FF4 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30BA220C5DDB600806FF4 /* WeatherManager.swift */; };
+		B897F3B7B6E4C7118DA06E44 /* Pods_PoznanWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030C91ACF72A2D0BD3B3C5F6 /* Pods_PoznanWeather.framework */; };
+		D0BF996743761DFFC7DC5A86 /* Pods_PoznanWeatherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C52383AB8443E4B704F92B /* Pods_PoznanWeatherTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		030C91ACF72A2D0BD3B3C5F6 /* Pods_PoznanWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoznanWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15E3E6CC5AD0B827AD95BB6E /* Pods-PoznanWeatherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoznanWeatherTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoznanWeatherTests/Pods-PoznanWeatherTests.release.xcconfig"; sourceTree = "<group>"; };
+		1E2199C58D2FC86E02589C95 /* Pods-PoznanWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoznanWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoznanWeather/Pods-PoznanWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		2B78A0D80D6EB820352EBFC5 /* Pods-PoznanWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoznanWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoznanWeather/Pods-PoznanWeather.release.xcconfig"; sourceTree = "<group>"; };
+		6377B12202F340B3E1B7AEB7 /* Pods-PoznanWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoznanWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoznanWeatherTests/Pods-PoznanWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B16721C120C58BE20086B47A /* PoznanWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoznanWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16721C420C58BE20086B47A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B16721C920C58BE20086B47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,6 +53,7 @@
 		B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		B1C30BA020C5DD1F00806FF4 /* WeatherManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManagerTests.swift; sourceTree = "<group>"; };
 		B1C30BA220C5DDB600806FF4 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		F9C52383AB8443E4B704F92B /* Pods_PoznanWeatherTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoznanWeatherTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B897F3B7B6E4C7118DA06E44 /* Pods_PoznanWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,18 +69,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0BF996743761DFFC7DC5A86 /* Pods_PoznanWeatherTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B529F5AE83B699AB92EF722 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E2199C58D2FC86E02589C95 /* Pods-PoznanWeather.debug.xcconfig */,
+				2B78A0D80D6EB820352EBFC5 /* Pods-PoznanWeather.release.xcconfig */,
+				6377B12202F340B3E1B7AEB7 /* Pods-PoznanWeatherTests.debug.xcconfig */,
+				15E3E6CC5AD0B827AD95BB6E /* Pods-PoznanWeatherTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B16721B820C58BE20086B47A = {
 			isa = PBXGroup;
 			children = (
 				B16721C320C58BE20086B47A /* PoznanWeather */,
 				B16721D820C58BE40086B47A /* PoznanWeatherTests */,
 				B16721C220C58BE20086B47A /* Products */,
+				6B529F5AE83B699AB92EF722 /* Pods */,
+				D66F6ADB5BDCB1AF4F3DA357 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +166,15 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		D66F6ADB5BDCB1AF4F3DA357 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				030C91ACF72A2D0BD3B3C5F6 /* Pods_PoznanWeather.framework */,
+				F9C52383AB8443E4B704F92B /* Pods_PoznanWeatherTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +182,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B16721DE20C58BE40086B47A /* Build configuration list for PBXNativeTarget "PoznanWeather" */;
 			buildPhases = (
+				BEF796D96AD11C13A7E46B3F /* [CP] Check Pods Manifest.lock */,
 				B16721BD20C58BE20086B47A /* Sources */,
 				B16721BE20C58BE20086B47A /* Frameworks */,
 				B16721BF20C58BE20086B47A /* Resources */,
+				E326FEE7BB18BD2AE9C9189D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,6 +201,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B16721E120C58BE40086B47A /* Build configuration list for PBXNativeTarget "PoznanWeatherTests" */;
 			buildPhases = (
+				3EBCCCF5F9E41C4BC227E5DE /* [CP] Check Pods Manifest.lock */,
 				B16721D120C58BE40086B47A /* Sources */,
 				B16721D220C58BE40086B47A /* Frameworks */,
 				B16721D320C58BE40086B47A /* Resources */,
@@ -241,6 +276,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3EBCCCF5F9E41C4BC227E5DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PoznanWeatherTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEF796D96AD11C13A7E46B3F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PoznanWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E326FEE7BB18BD2AE9C9189D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PoznanWeather/Pods-PoznanWeather-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoznanWeather/Pods-PoznanWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B16721BD20C58BE20086B47A /* Sources */ = {
@@ -409,15 +501,13 @@
 		};
 		B16721DF20C58BE40086B47A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E2199C58D2FC86E02589C95 /* Pods-PoznanWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = "$(SRCROOT)/PoznanWeather/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -427,15 +517,13 @@
 		};
 		B16721E020C58BE40086B47A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B78A0D80D6EB820352EBFC5 /* Pods-PoznanWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = "$(SRCROOT)/PoznanWeather/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -445,6 +533,7 @@
 		};
 		B16721E220C58BE40086B47A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6377B12202F340B3E1B7AEB7 /* Pods-PoznanWeatherTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -452,11 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = PoznanWeatherTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeatherTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -468,6 +553,7 @@
 		};
 		B16721E320C58BE40086B47A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15E3E6CC5AD0B827AD95BB6E /* Pods-PoznanWeatherTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -475,11 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = PoznanWeatherTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeatherTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

@@ -18,6 +18,9 @@ class MainCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         
+        let weatherManager = WeatherManager()
+        weatherManager.getWeatherData()
+        
     }
 
     override func didReceiveMemoryWarning() {

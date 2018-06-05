@@ -6,10 +6,9 @@ target 'PoznanWeather' do
   use_frameworks!
 
   # Pods for PoznanWeather
-
+    pod 'Alamofire'
   target 'PoznanWeatherTests' do
     inherit! :search_paths
-    pod 'Alamofire', '~> 4.7'
     # Pods for testing
   end
 

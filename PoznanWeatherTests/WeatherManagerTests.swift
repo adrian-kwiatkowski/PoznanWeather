@@ -24,8 +24,18 @@ class WeatherManagerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testDaysArrayReturnsZero() {
-        XCTAssertEqual(sut.daysArray.count, 0)
+    func testDaysArrayCountReturnsZero() {
+        XCTAssertEqual(sut.daysArrayCount, 0)
+    }
+    
+    func testAdd_DaysCountReturnsOne() {
+        sut.addDay(data: exampleWeatherData)
+        XCTAssertEqual(sut.daysArrayCount, 1)
+    }
+
+    func testQuery_ReturnsDayAtIndex() {
+        sut.addDay(data: exampleWeatherData)
+        XCTAssertEqual(sut.dayAtIndex(index: 0), exampleWeatherData)
     }
     
 }
