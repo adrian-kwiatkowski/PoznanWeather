@@ -45,11 +45,11 @@ class WeatherManager {
             let dateBeforeFormatting = Date(timeIntervalSince1970:TimeInterval(item["dt"].intValue))
             let tmpDate = formatter.string(from: dateBeforeFormatting)
             
-            let tmpAvgTemp = item["temp"]["day"].floatValue
+            let tmpAvgTemp = item["temp"]["day"].floatValue - 272.15
             let tmpPressure = item["pressure"].floatValue
-            let tmpWeatherIcon = item["weather"]["icon"].stringValue
-            let tmpMaxTemp = item["temp"]["max"].floatValue
-            let tmpMinTemp = item["temp"]["min"].floatValue
+            let tmpWeatherIcon = item["weather"][0]["icon"].stringValue
+            let tmpMaxTemp = item["temp"]["max"].floatValue - 272.15
+            let tmpMinTemp = item["temp"]["min"].floatValue - 272.15
             let tmpHumidity = item["humidity"].intValue
             let tmpWindSpeed = item["speed"].floatValue
             let tmpWindDirection = item["deg"].intValue
