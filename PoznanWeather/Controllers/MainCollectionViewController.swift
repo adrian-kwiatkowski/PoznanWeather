@@ -10,32 +10,7 @@ import UIKit
 
 class MainCollectionViewController: UICollectionViewController {
     
-//    var largeCellIndexPath: IndexPath? {//NSIndexPath? {
-//        didSet {
-//            var indexPaths = [IndexPath]()
-//            if let largeCellIndexPath = largeCellIndexPath {
-//                indexPaths.append(largeCellIndexPath)
-//            }
-//            if let oldValue = oldValue {
-//                indexPaths.append(oldValue)
-//            }
-//            collectionView?.performBatchUpdates({
-//                self.collectionView?.reloadItems(at: indexPaths)
-//            }) { completed in
-//                if let largeCellIndexPath = self.largeCellIndexPath {
-//                    self.collectionView?.scrollToItem(
-//                        at: largeCellIndexPath,
-//                        at: .centeredVertically,
-//                        animated: true)
-//                }
-//            }
-//        }
-//    }
-    
-    let itemsPerRow: CGFloat = 1
-    let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     var weatherManager: WeatherManager?
-    var lastSelectedCell: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,19 +49,29 @@ class MainCollectionViewController: UICollectionViewController {
         return cell
     }
     
-//    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-//        largeCellIndexPath = largeCellIndexPath == indexPath ? nil : indexPath
-//        return false
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-//        let availableWidth = view.frame.width - paddingSpace
-//        let widthPerItem = availableWidth / itemsPerRow
-//        
-//        return CGSize(width: widthPerItem, height: widthPerItem)
-//    }
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerID", for: indexPath)
+        header.backgroundColor = UIColor(white: 1, alpha: 0.25)
+        return header
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedCell = collectionView.cellForItem(at: indexPath) as! WeatherCell
+        let dayDetails = weatherManager!.dayAtIndex(index: indexPath.row)
+        selectedCell.backgroundColor = UIColor(white: 1, alpha: 0.25)
+        
+        let alertString = "Temperature: \(Int(dayDetails.minTemperature))°C - \(Int(dayDetails.maxTemperature))°C\nPressure: \(Int(dayDetails.pressure)) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.windSpeed) m/s\nWind Direction: \(weatherManager!.getWindDirectionString(index: indexPath.row))"
+        
+        let alert = UIAlertController(title: selectedCell.dateLabel.text, message: alertString, preferredStyle: .alert)
+        let imageView = UIImageView(image: selectedCell.iconLabel.image)
+        let action = UIAlertAction(title: "Back", style: .default) { _ in
+            selectedCell.backgroundColor = UIColor(white: 1, alpha: 0)
+        }
+        alert.addAction(action)
+        alert.view.addSubview(imageView)
+        self.present(alert, animated: true)
+    }
     
 }
+
+

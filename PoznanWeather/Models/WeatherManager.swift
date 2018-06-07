@@ -59,6 +59,21 @@ class WeatherManager {
             addDay(data: tempWeather)
         }
     }
+    
+    func getWindDirectionString(index: Int) -> String {
+        let windDirection = dayAtIndex(index: index).windDirection
+        switch windDirection {
+        case 0...45: return "N"
+        case 46...90: return "NE"
+        case 91...135: return "E"
+        case 136...180: return "SE"
+        case 181...225: return "S"
+        case 226...270: return "SW"
+        case 271...315: return "W"
+        case 316...360: return "NW"
+        default: return ""
+        }
+    }
 }
 
 
