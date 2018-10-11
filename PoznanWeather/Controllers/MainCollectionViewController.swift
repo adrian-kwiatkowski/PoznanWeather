@@ -11,6 +11,7 @@ import UIKit
 class MainCollectionViewController: UICollectionViewController {
     
     var weatherManager: WeatherManager?
+    @IBOutlet weak var spinnerView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class MainCollectionViewController: UICollectionViewController {
         weatherManager!.getWeatherData() {
             self.collectionView?.reloadData()
             print("data fetched successfully")
+            self.spinnerView.stopAnimating()
         }
         
     }
