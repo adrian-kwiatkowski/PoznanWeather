@@ -25,13 +25,16 @@ class WeatherManager {
     }
     
     func getWeatherData(completion: @escaping () -> ()) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         Alamofire.request(weatherURL).responseJSON { (response) in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)["list"]
                 self.updateWeatherDataModel(json)
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 completion()
             case .failure(let error):
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 print(error)
             }
         }
