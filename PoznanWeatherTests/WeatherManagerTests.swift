@@ -11,26 +11,17 @@ import XCTest
 
 class WeatherManagerTests: XCTestCase {
     
-    var sut: WeatherManager!
-    let exampleWeatherData = WeatherDataModel(date: "05/06/2018", avgTemperature: 295.15, pressure: 1012.5, weatherIcon: "04d", maxTemperature: 293.23, minTemperature: 292.22, humidity: 55, windSpeed: 2.96, windDirection: 300)
-    
-    override func setUp() {
-        super.setUp()
-        sut = WeatherManager()
-    }
-    
-    override func tearDown() {
-        sut = nil
-        super.tearDown()
-    }
+    var sut = WeatherManager()
+    let exampleWeatherData = WeatherDataModelSpy()
     
     func testDaysArrayCountReturnsZero() {
-        XCTAssertEqual(sut.daysArrayCount, 0)
+        XCTAssertTrue(sut.daysArrayCount == 0)
     }
     
     func testAdd_DaysCountReturnsOne() {
+        let initialDaysCount = sut.daysArrayCount
         sut.addDay(data: exampleWeatherData)
-        XCTAssertEqual(sut.daysArrayCount, 1)
+        XCTAssertEqual(sut.daysArrayCount, initialDaysCount + 1)
     }
 
     func testQuery_ReturnsDayAtIndex() {
@@ -38,4 +29,11 @@ class WeatherManagerTests: XCTestCase {
         XCTAssertEqual(sut.dayAtIndex(index: 0), exampleWeatherData)
     }
     
+}
+
+//MARK: - Helpers
+class WeatherDataModelSpy: WeatherDataModel {
+    init() {
+        super.init(date: "0", avgTemperature: 0.0, pressure: 0.0, weatherIcon: "0", maxTemperature: 0.0, minTemperature: 0.0, humidity: 0, windSpeed: 0.0, windDirection: 0)
+    }
 }
