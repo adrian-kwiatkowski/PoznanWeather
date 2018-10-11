@@ -39,13 +39,14 @@
                                 </visualEffectView>
                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="me3-ir-8V5">
                                     <rect key="frame" x="169" y="315" width="37" height="37"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Xbg-y0-84S" secondAttribute="trailing" id="5KH-QM-fuj"/>
                                 <constraint firstAttribute="bottom" secondItem="r5P-Nm-miM" secondAttribute="bottom" id="6zc-wH-DMG"/>
+                                <constraint firstItem="me3-ir-8V5" firstAttribute="centerY" secondItem="ZoB-5h-Xey" secondAttribute="centerY" id="LNH-TN-PVz"/>
+                                <constraint firstItem="me3-ir-8V5" firstAttribute="centerX" secondItem="ZoB-5h-Xey" secondAttribute="centerX" id="Ohc-R3-CtD"/>
                                 <constraint firstAttribute="trailing" secondItem="r5P-Nm-miM" secondAttribute="trailing" id="X7M-01-Lqa"/>
                                 <constraint firstItem="r5P-Nm-miM" firstAttribute="leading" secondItem="ZoB-5h-Xey" secondAttribute="leading" id="ac1-y4-9dV"/>
                                 <constraint firstItem="r5P-Nm-miM" firstAttribute="top" secondItem="ZoB-5h-Xey" secondAttribute="top" id="avD-B1-3VF"/>
