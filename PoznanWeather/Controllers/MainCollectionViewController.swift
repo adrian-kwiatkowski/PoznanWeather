@@ -18,7 +18,12 @@ class MainCollectionViewController: UICollectionViewController {
         
         weatherManager = WeatherManager()
         weatherManager!.getWeatherData() {
-            self.collectionView?.reloadData()
+            
+            self.collectionView.performBatchUpdates({
+                let indexSet = IndexSet(integersIn: 0...0)
+                self.collectionView.reloadSections(indexSet)
+            }, completion: nil)
+            
             print("data fetched successfully")
             self.spinnerView.stopAnimating()
         }
