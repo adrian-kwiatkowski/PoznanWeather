@@ -7,46 +7,45 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 class WeatherManager {
     
     var daysArrayCount: Int { return daysArray.count }
-    var daysArray = [WeatherDataModel]()
+    var daysArray = [WeatherData]()
     
-    func addDay(data: WeatherDataModel) {
+    func addDay(data: WeatherData) {
         daysArray.append(data)
     }
     
-    func dayAtIndex(index: Int) -> WeatherDataModel {
+    func dayAtIndex(index: Int) -> WeatherData {
         return daysArray[index]
     }
     
     func getWeatherData(completion: @escaping ()->()) {
-        APIService.fetchWeatherData { (json) in
-            self.updateWeatherDataModel(json)
+        APIService.fetchWeatherData { (response) in
+            self.updateWeatherDataModel(response.list)
             completion()
         }
     }
     
-    func updateWeatherDataModel(_ json: JSON) {
-        for item in json.arrayValue {
+    func updateWeatherDataModel(_ weatherData: [TEMPWeatherData]) {
+        for item in weatherData {
             
             let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/yyyy"
-            let dateBeforeFormatting = Date(timeIntervalSince1970:TimeInterval(item["dt"].intValue))
+            let dateBeforeFormatting = Date(timeIntervalSince1970:TimeInterval(item.dt))
             let tmpDate = formatter.string(from: dateBeforeFormatting)
             
-            let tmpAvgTemp = item["temp"]["day"].floatValue - 272.15
-            let tmpPressure = item["pressure"].floatValue
-            let tmpWeatherIcon = item["weather"][0]["icon"].stringValue
-            let tmpMaxTemp = item["temp"]["max"].floatValue - 272.15
-            let tmpMinTemp = item["temp"]["min"].floatValue - 272.15
-            let tmpHumidity = item["humidity"].intValue
-            let tmpWindSpeed = item["speed"].floatValue
-            let tmpWindDirection = item["deg"].intValue
+            let tmpAvgTemp = item.temp.day - 272.15
+            let tmpPressure = item.pressure
+            let tmpWeatherIcon = item.weather.first?.icon ?? ""
+            let tmpMaxTemp = item.temp.max - 272.15
+            let tmpMinTemp = item.temp.min - 272.15
+            let tmpHumidity = item.humidity
+            let tmpWindSpeed = item.speed
+            let tmpWindDirection = item.deg
             
-            let tempWeather = WeatherDataModel(date: tmpDate, avgTemperature: tmpAvgTemp, pressure: tmpPressure, weatherIcon: tmpWeatherIcon, maxTemperature: tmpMaxTemp, minTemperature: tmpMinTemp, humidity: tmpHumidity, windSpeed: tmpWindSpeed, windDirection: tmpWindDirection)
+            let tempWeather = WeatherData(date: tmpDate, avgTemperature: tmpAvgTemp, pressure: tmpPressure, weatherIcon: tmpWeatherIcon, maxTemperature: tmpMaxTemp, minTemperature: tmpMinTemp, humidity: tmpHumidity, windSpeed: tmpWindSpeed, windDirection: tmpWindDirection)
             
             addDay(data: tempWeather)
         }

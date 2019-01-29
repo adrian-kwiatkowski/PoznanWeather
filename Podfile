@@ -7,7 +7,6 @@ target 'PoznanWeather' do
 
   # Pods for PoznanWeather
     pod 'Alamofire'
-    pod 'SwiftyJSON'
   target 'PoznanWeatherTests' do
     inherit! :search_paths
     # Pods for testing
