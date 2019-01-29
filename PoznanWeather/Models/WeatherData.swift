@@ -14,22 +14,44 @@ struct APIResponse: Codable {
 }
 
 struct WeatherData: Codable {
-    let dt: Int
+    
+    let date: Int
     let dateString: String?
     let temp: Temperature
     let pressure: Float
     let humidity: Int
     let weather: [Weather]
-    let speed: Float
-    let deg: Int
+    let windSpeed: Float
+    let windDirection: Int
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case date = "dt"
+        case dateString
+        case temp
+        case pressure
+        case humidity
+        case weather
+        case windSpeed = "speed"
+        case windDirection = "deg"
+    }
     
     struct Temperature: Codable {
-        let day: Float
+        
+        let avg: Float
         let min: Float
         let max: Float
+        
+        enum CodingKeys: String, CodingKey {
+            
+            case avg = "day"
+            case min
+            case max
+        }
     }
     
     struct Weather: Codable {
+        
         let icon: String
     }
 }

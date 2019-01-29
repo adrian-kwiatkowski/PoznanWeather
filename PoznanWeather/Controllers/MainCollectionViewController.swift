@@ -44,7 +44,7 @@ class MainCollectionViewController: UICollectionViewController {
         
         if let cellToDisplay = weatherManager?.dayAtIndex(index: indexPath.row) {
             cell.dateLabel.text = cellToDisplay.dateString
-            cell.tempLabel.text = "\(Int(cellToDisplay.temp.day))°C"
+            cell.tempLabel.text = "\(Int(cellToDisplay.temp.avg))°C"
             cell.pressureLabel.text = "\(Int(cellToDisplay.pressure)) hPa"
         }
         
@@ -67,7 +67,7 @@ class MainCollectionViewController: UICollectionViewController {
         let dayDetails = weatherManager!.dayAtIndex(index: indexPath.row)
         selectedCell.backgroundColor = UIColor(white: 1, alpha: 0.25)
         
-        let alertString = "Temperature: \(Int(dayDetails.temp.min))°C - \(Int(dayDetails.temp.max))°C\nPressure: \(Int(dayDetails.pressure)) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.speed) m/s\nWind Direction: \(weatherManager!.getWindDirectionString(index: indexPath.row))"
+        let alertString = "Temperature: \(Int(dayDetails.temp.min))°C - \(Int(dayDetails.temp.max))°C\nPressure: \(Int(dayDetails.pressure)) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.windSpeed) m/s\nWind Direction: \(weatherManager!.getWindDirectionString(index: indexPath.row))"
         
         let alert = UIAlertController(title: selectedCell.dateLabel.text, message: alertString, preferredStyle: .alert)
         let imageView = UIImageView(image: selectedCell.iconLabel.image)

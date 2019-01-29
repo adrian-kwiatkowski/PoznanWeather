@@ -33,26 +33,26 @@ class WeatherManager {
             
             let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/yyyy"
-            let dateBeforeFormatting = Date(timeIntervalSince1970:TimeInterval(item.dt))
+            let dateBeforeFormatting = Date(timeIntervalSince1970:TimeInterval(item.date))
             let tmpDate = formatter.string(from: dateBeforeFormatting)
             
-            let tmpAvgTemp = item.temp.day - 272.15
+            let tmpAvgTemp = item.temp.avg - 272.15
             let tmpPressure = item.pressure
             let tmpWeatherIcon = item.weather.first?.icon ?? ""
             let tmpMaxTemp = item.temp.max - 272.15
             let tmpMinTemp = item.temp.min - 272.15
             let tmpHumidity = item.humidity
-            let tmpWindSpeed = item.speed
-            let tmpWindDirection = item.deg
+            let tmpWindSpeed = item.windSpeed
+            let tmpWindDirection = item.windDirection
             
-            let tempWeather = WeatherData(dt: item.dt, dateString: tmpDate, temp: WeatherData.Temperature(day: tmpAvgTemp, min: tmpMinTemp, max: tmpMaxTemp), pressure: tmpPressure, humidity: tmpHumidity, weather: [WeatherData.Weather(icon: tmpWeatherIcon), ], speed: tmpWindSpeed, deg: tmpWindDirection)
+            let tempWeather = WeatherData(date: item.date, dateString: tmpDate, temp: WeatherData.Temperature(avg: tmpAvgTemp, min: tmpMinTemp, max: tmpMaxTemp), pressure: tmpPressure, humidity: tmpHumidity, weather: [WeatherData.Weather(icon: tmpWeatherIcon), ], windSpeed: tmpWindSpeed, windDirection: tmpWindDirection)
             
             addDay(data: tempWeather)
         }
     }
     
     func getWindDirectionString(index: Int) -> String {
-        let windDirection = dayAtIndex(index: index).deg
+        let windDirection = dayAtIndex(index: index).windDirection
         switch windDirection {
         case 0...45: return "N"
         case 46...90: return "NE"
