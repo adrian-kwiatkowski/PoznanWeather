@@ -43,12 +43,12 @@ class MainCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weatherCellID", for: indexPath) as! WeatherCell
         
         if let cellToDisplay = weatherManager?.dayAtIndex(index: indexPath.row) {
-            cell.dateLabel.text = cellToDisplay.date
-            cell.tempLabel.text = "\(Int(cellToDisplay.avgTemperature))°C"
+            cell.dateLabel.text = cellToDisplay.dateString
+            cell.tempLabel.text = "\(Int(cellToDisplay.temp.day))°C"
             cell.pressureLabel.text = "\(Int(cellToDisplay.pressure)) hPa"
         }
         
-        let iconID = weatherManager?.dayAtIndex(index: indexPath.row).weatherIcon
+        let iconID = weatherManager?.dayAtIndex(index: indexPath.row).weather.first?.icon
         let url = URL(string: "https://openweathermap.org/img/w/\(iconID ?? "01n").png")
         let data = try? Data(contentsOf: url!)
         cell.iconLabel.image = UIImage(data: data!)
@@ -67,7 +67,7 @@ class MainCollectionViewController: UICollectionViewController {
         let dayDetails = weatherManager!.dayAtIndex(index: indexPath.row)
         selectedCell.backgroundColor = UIColor(white: 1, alpha: 0.25)
         
-        let alertString = "Temperature: \(Int(dayDetails.minTemperature))°C - \(Int(dayDetails.maxTemperature))°C\nPressure: \(Int(dayDetails.pressure)) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.windSpeed) m/s\nWind Direction: \(weatherManager!.getWindDirectionString(index: indexPath.row))"
+        let alertString = "Temperature: \(Int(dayDetails.temp.min))°C - \(Int(dayDetails.temp.max))°C\nPressure: \(Int(dayDetails.pressure)) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.speed) m/s\nWind Direction: \(weatherManager!.getWindDirectionString(index: indexPath.row))"
         
         let alert = UIAlertController(title: selectedCell.dateLabel.text, message: alertString, preferredStyle: .alert)
         let imageView = UIImageView(image: selectedCell.iconLabel.image)

@@ -28,7 +28,7 @@ class WeatherManager {
         }
     }
     
-    func updateWeatherDataModel(_ weatherData: [TEMPWeatherData]) {
+    func updateWeatherDataModel(_ weatherData: [WeatherData]) {
         for item in weatherData {
             
             let formatter = DateFormatter()
@@ -45,14 +45,14 @@ class WeatherManager {
             let tmpWindSpeed = item.speed
             let tmpWindDirection = item.deg
             
-            let tempWeather = WeatherData(date: tmpDate, avgTemperature: tmpAvgTemp, pressure: tmpPressure, weatherIcon: tmpWeatherIcon, maxTemperature: tmpMaxTemp, minTemperature: tmpMinTemp, humidity: tmpHumidity, windSpeed: tmpWindSpeed, windDirection: tmpWindDirection)
+            let tempWeather = WeatherData(dt: item.dt, dateString: tmpDate, temp: WeatherData.Temperature(day: tmpAvgTemp, min: tmpMinTemp, max: tmpMaxTemp), pressure: tmpPressure, humidity: tmpHumidity, weather: [WeatherData.Weather(icon: tmpWeatherIcon), ], speed: tmpWindSpeed, deg: tmpWindDirection)
             
             addDay(data: tempWeather)
         }
     }
     
     func getWindDirectionString(index: Int) -> String {
-        let windDirection = dayAtIndex(index: index).windDirection
+        let windDirection = dayAtIndex(index: index).deg
         switch windDirection {
         case 0...45: return "N"
         case 46...90: return "NE"
