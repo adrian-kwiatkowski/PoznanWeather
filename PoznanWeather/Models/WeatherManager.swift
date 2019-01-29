@@ -7,11 +7,9 @@
 //
 
 import Foundation
-import Alamofire
 import SwiftyJSON
 
 class WeatherManager {
-    let weatherURL = "https://api.openweathermap.org/data/2.5/forecast/daily?id=7530858&cnt=7&appid=ad4e521f54b155390c178acc59582f10"
     
     var daysArrayCount: Int { return daysArray.count }
     var daysArray = [WeatherDataModel]()
@@ -24,19 +22,10 @@ class WeatherManager {
         return daysArray[index]
     }
     
-    func getWeatherData(completion: @escaping () -> ()) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        Alamofire.request(weatherURL).responseJSON { (response) in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)["list"]
-                self.updateWeatherDataModel(json)
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                completion()
-            case .failure(let error):
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                print(error)
-            }
+    func getWeatherData(completion: @escaping ()->()) {
+        APIService.fetchWeatherData { (json) in
+            self.updateWeatherDataModel(json)
+            completion()
         }
     }
     

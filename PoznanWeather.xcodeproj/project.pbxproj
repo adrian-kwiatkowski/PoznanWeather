@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B14E43492200DEF9000F3095 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E43482200DEF9000F3095 /* APIService.swift */; };
 		B15AB7E520C72CEE0004D6B6 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15AB7E420C72CEE0004D6B6 /* WeatherCell.swift */; };
 		B16721C520C58BE20086B47A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16721C420C58BE20086B47A /* AppDelegate.swift */; };
 		B16721CA20C58BE20086B47A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16721C820C58BE20086B47A /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		1E2199C58D2FC86E02589C95 /* Pods-PoznanWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoznanWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoznanWeather/Pods-PoznanWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		2B78A0D80D6EB820352EBFC5 /* Pods-PoznanWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoznanWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoznanWeather/Pods-PoznanWeather.release.xcconfig"; sourceTree = "<group>"; };
 		6377B12202F340B3E1B7AEB7 /* Pods-PoznanWeatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoznanWeatherTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoznanWeatherTests/Pods-PoznanWeatherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B14E43482200DEF9000F3095 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B15AB7E420C72CEE0004D6B6 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		B16721C120C58BE20086B47A /* PoznanWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoznanWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16721C420C58BE20086B47A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B14E43472200DEE8000F3095 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				B14E43482200DEF9000F3095 /* APIService.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
 		B16721B820C58BE20086B47A = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		B16721C320C58BE20086B47A /* PoznanWeather */ = {
 			isa = PBXGroup;
 			children = (
+				B14E43472200DEE8000F3095 /* Commons */,
 				B1C30B9B20C5D32D00806FF4 /* Views */,
 				B1C30B9C20C5D33100806FF4 /* Models */,
 				B1C30B9D20C5D33900806FF4 /* Controllers */,
@@ -341,6 +352,7 @@
 				B1C30B9F20C5D71000806FF4 /* MainCollectionViewController.swift in Sources */,
 				B15AB7E520C72CEE0004D6B6 /* WeatherCell.swift in Sources */,
 				B1C30BA320C5DDB600806FF4 /* WeatherManager.swift in Sources */,
+				B14E43492200DEF9000F3095 /* APIService.swift in Sources */,
 				B1C30B9A20C5D32600806FF4 /* WeatherDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

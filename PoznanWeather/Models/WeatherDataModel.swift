@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WeatherDataModel: Equatable {
+struct WeatherDataModel: Equatable {
     let date: String
     let avgTemperature: Float
     let pressure: Float
