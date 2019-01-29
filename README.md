@@ -1,3 +1,3 @@
 # PoznanWeather
 This app uses https://openweathermap.org API to show the weather in Poznań for 7 next days. 
-UICollectionViewController is used to display cells. Networking done by Alamofire.
+UICollectionViewController is used to display cells.
