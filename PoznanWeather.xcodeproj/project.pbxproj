@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15A08D00221048290097240E /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15A08CFE221048290097240E /* WeatherCollectionViewCell.xib */; };
+		15A08D02221055410097240E /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A08D01221055410097240E /* WeatherDetailsViewController.swift */; };
 		B14E43492200DEF9000F3095 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E43482200DEF9000F3095 /* APIService.swift */; };
 		B15AB7E520C72CEE0004D6B6 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15AB7E420C72CEE0004D6B6 /* WeatherCollectionViewCell.swift */; };
 		B16721C520C58BE20086B47A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16721C420C58BE20086B47A /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		15A08CFE221048290097240E /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
+		15A08D01221055410097240E /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		B14E43482200DEF9000F3095 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		B15AB7E420C72CEE0004D6B6 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		B16721C120C58BE20086B47A /* PoznanWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoznanWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */,
+				15A08D01221055410097240E /* WeatherDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				B16721C520C58BE20086B47A /* AppDelegate.swift in Sources */,
 				B1C30B9F20C5D71000806FF4 /* MainCollectionViewController.swift in Sources */,
+				15A08D02221055410097240E /* WeatherDetailsViewController.swift in Sources */,
 				B15AB7E520C72CEE0004D6B6 /* WeatherCollectionViewCell.swift in Sources */,
 				B14E43492200DEF9000F3095 /* APIService.swift in Sources */,
 				B1C30B9A20C5D32600806FF4 /* WeatherData.swift in Sources */,

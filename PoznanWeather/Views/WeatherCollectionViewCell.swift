@@ -15,6 +15,12 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     
+    override var isSelected: Bool {
+        didSet {
+            backgroundColor = isSelected ? UIColor.white.withAlphaComponent(0.25) : UIColor.clear
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

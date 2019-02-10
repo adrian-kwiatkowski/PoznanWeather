@@ -32,20 +32,13 @@ class MainCollectionViewController: UICollectionViewController {
 extension MainCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedCell = collectionView.cellForItem(at: indexPath) as! WeatherCollectionViewCell
-        let dayDetails = daysArray[indexPath.row]
-        selectedCell.backgroundColor = UIColor(white: 1, alpha: 0.25)
+        collectionView.deselectItem(at: indexPath, animated: true)
         
-        let alertString = "Temperature: \(dayDetails.temp.minCelcius)°C - \(dayDetails.temp.maxCelcius)°C\nPressure: \(dayDetails.compPressure) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.windSpeed) m/s\nWind Direction: \(dayDetails.windDirectionIcon)"
-        
-        let alert = UIAlertController(title: selectedCell.dateLabel.text, message: alertString, preferredStyle: .alert)
-        let imageView = UIImageView(image: selectedCell.iconLabel.image)
-        let action = UIAlertAction(title: "Back", style: .default) { _ in
-            selectedCell.backgroundColor = UIColor(white: 1, alpha: 0)
+        if let detailsVC = storyboard?.instantiateViewController(withIdentifier: "WeatherDetailsViewController") as? WeatherDetailsViewController {
+            detailsVC.modalPresentationStyle = .overCurrentContext
+            detailsVC.weatherData = daysArray[indexPath.row]
+            present(detailsVC, animated: true)
         }
-        alert.addAction(action)
-        alert.view.addSubview(imageView)
-        self.present(alert, animated: true)
     }
 }
 
