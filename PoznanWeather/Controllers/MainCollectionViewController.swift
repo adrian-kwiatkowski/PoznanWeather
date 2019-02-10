@@ -15,45 +15,18 @@ class MainCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinnerView.startAnimating()
         
         APIService.fetchWeatherData { (response) in
             self.daysArray = response
             self.collectionView.reloadData()
             self.spinnerView.stopAnimating()
         }
-        
     }
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return daysArray.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weatherCellID", for: indexPath) as! WeatherCell
-        
-        let cellToDisplay = daysArray[indexPath.row]
-            cell.dateLabel.text = cellToDisplay.compDate
-            cell.tempLabel.text = "\(cellToDisplay.averageTemp)°C"
-            cell.pressureLabel.text = "\(cellToDisplay.compPressure) hPa"
-        
-        
-        let iconID = cellToDisplay.weatherIcon
-        let url = URL(string: "https://openweathermap.org/img/w/\(iconID).png")
-        let data = try? Data(contentsOf: url!)
-        cell.iconLabel.image = UIImage(data: data!)
-        
-        return cell
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerID", for: indexPath)
-        header.backgroundColor = UIColor(white: 1, alpha: 0.25)
-        return header
-    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension MainCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! WeatherCell
@@ -71,7 +44,35 @@ class MainCollectionViewController: UICollectionViewController {
         alert.view.addSubview(imageView)
         self.present(alert, animated: true)
     }
-    
 }
 
-
+// MARK: - UICollectionViewDataSource
+extension MainCollectionViewController {
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return daysArray.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerID", for: indexPath)
+        header.backgroundColor = UIColor(white: 1, alpha: 0.25)
+        return header
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weatherCellID", for: indexPath) as! WeatherCell
+        
+        let cellToDisplay = daysArray[indexPath.row]
+        cell.dateLabel.text = cellToDisplay.compDate
+        cell.tempLabel.text = "\(cellToDisplay.averageTemp)°C"
+        cell.pressureLabel.text = "\(cellToDisplay.compPressure) hPa"
+        
+        
+        let iconID = cellToDisplay.weatherIcon
+        let url = URL(string: "https://openweathermap.org/img/w/\(iconID).png")
+        let data = try? Data(contentsOf: url!)
+        cell.iconLabel.image = UIImage(data: data!)
+        
+        return cell
+    }
+}

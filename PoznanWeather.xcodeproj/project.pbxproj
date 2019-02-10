@@ -90,8 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				B14E43472200DEE8000F3095 /* Commons */,
-				B1C30B9B20C5D32D00806FF4 /* Views */,
 				B1C30B9C20C5D33100806FF4 /* Models */,
+				B1C30B9B20C5D32D00806FF4 /* Views */,
 				B1C30B9D20C5D33900806FF4 /* Controllers */,
 				B1C30B9220C5CDAA00806FF4 /* Supporting Files */,
 			);

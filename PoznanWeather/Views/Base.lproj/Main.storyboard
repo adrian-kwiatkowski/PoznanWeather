@@ -37,7 +37,7 @@
                                     </view>
                                     <blurEffect style="dark"/>
                                 </visualEffectView>
-                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="me3-ir-8V5">
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="me3-ir-8V5">
                                     <rect key="frame" x="169" y="315" width="37" height="37"/>
                                 </activityIndicatorView>
                             </subviews>
