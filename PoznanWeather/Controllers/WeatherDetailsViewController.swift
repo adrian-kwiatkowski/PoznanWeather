@@ -13,15 +13,28 @@ class WeatherDetailsViewController: UIViewController {
     @IBOutlet weak var cardView: UIView! {
         didSet {
             cardView.layer.cornerRadius = 20.0
-            cardView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+            cardView.backgroundColor = UIColor.white.withAlphaComponent(0.7)
         }
     }
+    
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var windLabel: UILabel!
     
     var weatherData: WeatherData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        iconImageView.image = weatherData.weatherIcon
+        dateLabel.text = weatherData.compDate
+        tempLabel.text = "\(weatherData.temp.minCelcius) - \(weatherData.temp.maxCelcius) °C"
+        pressureLabel.text = "\(weatherData.compPressure) hPa"
+        humidityLabel.text = "\(weatherData.humidity)%"
+        windLabel.text = "\(weatherData.windSpeed) m/s " + weatherData.windDirectionIcon
     }
     
     override func viewWillAppear(_ animated: Bool) {
