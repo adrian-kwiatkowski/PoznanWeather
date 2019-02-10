@@ -17,11 +17,11 @@ struct WeatherData: Codable {
     
     private let date: Int
     private let dateString: String?
-    private let temp: Temperature
     private let weather: [Weather]
     private let windDirection: Int
     private let pressure: Float
 
+    let temp: Temperature
     let humidity: Int
     let windSpeed: Float
     
@@ -34,18 +34,6 @@ struct WeatherData: Codable {
     
     var compPressure: Int {
         return Int(pressure)
-    }
-    
-    var averageTemp: Int {
-        return Int(temp.avg - 272.15)
-    }
-    
-    var minimumTemp: Int {
-        return Int(temp.min - 272.15)
-    }
-    
-    var maximumTemp: Int {
-        return Int(temp.max - 272.15)
     }
     
     var weatherIcon: String {
@@ -71,7 +59,7 @@ struct WeatherData: Codable {
 // MARK: - Helpers
 extension WeatherData {
 
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         
         case date = "dt"
         case dateString
@@ -85,11 +73,23 @@ extension WeatherData {
     
     struct Temperature: Codable {
         
-        let avg: Float
-        let min: Float
-        let max: Float
+        private let avg: Float
+        private let min: Float
+        private let max: Float
         
-        enum CodingKeys: String, CodingKey {
+        var avgCelcius: Int {
+            return Int(avg - 272.15)
+        }
+        
+        var minCelcius: Int {
+            return Int(min - 272.15)
+        }
+        
+        var maxCelcius: Int {
+            return Int(max - 272.15)
+        }
+        
+        private enum CodingKeys: String, CodingKey {
             
             case avg = "day"
             case min

@@ -33,7 +33,7 @@ extension MainCollectionViewController {
         let dayDetails = daysArray[indexPath.row]
         selectedCell.backgroundColor = UIColor(white: 1, alpha: 0.25)
         
-        let alertString = "Temperature: \(dayDetails.minimumTemp)°C - \(dayDetails.maximumTemp)°C\nPressure: \(dayDetails.compPressure) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.windSpeed) m/s\nWind Direction: \(dayDetails.windDirectionIcon)"
+        let alertString = "Temperature: \(dayDetails.temp.minCelcius)°C - \(dayDetails.temp.maxCelcius)°C\nPressure: \(dayDetails.compPressure) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.windSpeed) m/s\nWind Direction: \(dayDetails.windDirectionIcon)"
         
         let alert = UIAlertController(title: selectedCell.dateLabel.text, message: alertString, preferredStyle: .alert)
         let imageView = UIImageView(image: selectedCell.iconLabel.image)
@@ -64,7 +64,7 @@ extension MainCollectionViewController {
         
         let cellToDisplay = daysArray[indexPath.row]
         cell.dateLabel.text = cellToDisplay.compDate
-        cell.tempLabel.text = "\(cellToDisplay.averageTemp)°C"
+        cell.tempLabel.text = "\(cellToDisplay.temp.avgCelcius)°C"
         cell.pressureLabel.text = "\(cellToDisplay.compPressure) hPa"
         
         
