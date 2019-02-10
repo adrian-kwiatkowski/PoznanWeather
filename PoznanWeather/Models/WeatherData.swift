@@ -36,8 +36,11 @@ struct WeatherData: Codable {
         return Int(pressure)
     }
     
-    var weatherIcon: String {
-        return weather.first?.icon ?? ""
+    var weatherIcon: UIImage? {
+        let iconID = weather.first?.icon ?? "01d"
+        let url = URL(string: "https://openweathermap.org/img/w/\(iconID).png")!
+        let data = try? Data(contentsOf: url)
+        return UIImage(data: data ?? Data())
     }
     
     var windDirectionIcon: String {

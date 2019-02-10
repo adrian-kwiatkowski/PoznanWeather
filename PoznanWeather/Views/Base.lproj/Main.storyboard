@@ -56,74 +56,20 @@
                             </constraints>
                         </view>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="weatherCellID" id="wHa-NU-PFZ" customClass="WeatherCell" customModule="PoznanWeather" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WeatherCollectionViewCell" id="hBf-GM-xoh" customClass="WeatherCollectionViewCell" customModule="PoznanWeather" customModuleProvider="target">
                                 <rect key="frame" x="87.5" y="85" width="200" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="70"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8a-Zj-nmD">
-                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ErN-hb-fbU">
-                                                    <rect key="frame" x="0.0" y="10" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4t-Qg-DMP">
-                                            <rect key="frame" x="70" y="0.0" width="130" height="70"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5L-Xg-7dv">
-                                                    <rect key="frame" x="0.0" y="8" width="122" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="press" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLG-73-yQh">
-                                                    <rect key="frame" x="57" y="40" width="65" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeP-hy-m4X">
-                                                    <rect key="frame" x="0.0" y="40" width="41" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                    </subviews>
                                 </view>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="U8a-Zj-nmD" secondAttribute="bottom" id="7OX-qJ-2Ej"/>
-                                    <constraint firstItem="h4t-Qg-DMP" firstAttribute="top" secondItem="wHa-NU-PFZ" secondAttribute="top" id="7v1-2l-3ST"/>
-                                    <constraint firstItem="U8a-Zj-nmD" firstAttribute="leading" secondItem="wHa-NU-PFZ" secondAttribute="leading" id="Gbb-8w-5n8"/>
-                                    <constraint firstItem="h4t-Qg-DMP" firstAttribute="leading" secondItem="U8a-Zj-nmD" secondAttribute="trailing" id="NxN-Gv-saU"/>
-                                    <constraint firstItem="h4t-Qg-DMP" firstAttribute="leading" secondItem="wHa-NU-PFZ" secondAttribute="leading" constant="70" id="Wzs-A9-8hC"/>
-                                    <constraint firstAttribute="bottom" secondItem="h4t-Qg-DMP" secondAttribute="bottom" id="aiB-LC-tAU"/>
-                                    <constraint firstItem="h4t-Qg-DMP" firstAttribute="leading" secondItem="U8a-Zj-nmD" secondAttribute="trailing" id="ego-uz-eT0"/>
-                                    <constraint firstItem="U8a-Zj-nmD" firstAttribute="top" secondItem="wHa-NU-PFZ" secondAttribute="top" id="jAK-NH-rOX"/>
-                                    <constraint firstAttribute="trailing" secondItem="h4t-Qg-DMP" secondAttribute="trailing" id="kY5-Aa-4IN"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dateLabel" destination="S5L-Xg-7dv" id="ClV-tS-Pre"/>
-                                    <outlet property="iconLabel" destination="ErN-hb-fbU" id="Fhx-JI-PJW"/>
-                                    <outlet property="pressureLabel" destination="uLG-73-yQh" id="Khs-Ku-hEj"/>
-                                    <outlet property="tempLabel" destination="eeP-hy-m4X" id="Fem-Px-lGS"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerID" id="4BC-WR-n4G">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PoznanWeather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4Y-jb-fAA">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PoznańWeather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4Y-jb-fAA">
                                     <rect key="frame" x="64" y="16" width="247.5" height="43.5"/>
                                     <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="35"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
