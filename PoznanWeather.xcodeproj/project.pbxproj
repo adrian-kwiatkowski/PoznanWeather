@@ -15,7 +15,6 @@
 		B16721CF20C58BE40086B47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B16721CD20C58BE40086B47A /* LaunchScreen.storyboard */; };
 		B1C30B9A20C5D32600806FF4 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9920C5D32600806FF4 /* WeatherData.swift */; };
 		B1C30B9F20C5D71000806FF4 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */; };
-		B1C30BA320C5DDB600806FF4 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30BA220C5DDB600806FF4 /* WeatherManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +40,6 @@
 		B16721DB20C58BE40086B47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1C30B9920C5D32600806FF4 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
-		B1C30BA220C5DDB600806FF4 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				B1C30B9920C5D32600806FF4 /* WeatherData.swift */,
-				B1C30BA220C5DDB600806FF4 /* WeatherManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,7 +248,6 @@
 				B16721C520C58BE20086B47A /* AppDelegate.swift in Sources */,
 				B1C30B9F20C5D71000806FF4 /* MainCollectionViewController.swift in Sources */,
 				B15AB7E520C72CEE0004D6B6 /* WeatherCell.swift in Sources */,
-				B1C30BA320C5DDB600806FF4 /* WeatherManager.swift in Sources */,
 				B14E43492200DEF9000F3095 /* APIService.swift in Sources */,
 				B1C30B9A20C5D32600806FF4 /* WeatherData.swift in Sources */,
 			);

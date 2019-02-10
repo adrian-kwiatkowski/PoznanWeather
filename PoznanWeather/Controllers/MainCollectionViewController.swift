@@ -10,21 +10,15 @@ import UIKit
 
 class MainCollectionViewController: UICollectionViewController {
     
-    var weatherManager: WeatherManager?
     @IBOutlet weak var spinnerView: UIActivityIndicatorView!
+    var daysArray = [WeatherData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        weatherManager = WeatherManager()
-        weatherManager!.getWeatherData() {
-            
-            self.collectionView.performBatchUpdates({
-                let indexSet = IndexSet(integersIn: 0...0)
-                self.collectionView.reloadSections(indexSet)
-            }, completion: nil)
-            
-            print("data fetched successfully")
+        APIService.fetchWeatherData { (response) in
+            self.daysArray = response
+            self.collectionView.reloadData()
             self.spinnerView.stopAnimating()
         }
         
@@ -34,22 +28,21 @@ class MainCollectionViewController: UICollectionViewController {
         return 1
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return weatherManager!.daysArrayCount
+        return daysArray.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weatherCellID", for: indexPath) as! WeatherCell
         
-        if let cellToDisplay = weatherManager?.dayAtIndex(index: indexPath.row) {
-            cell.dateLabel.text = cellToDisplay.dateString
-            cell.tempLabel.text = "\(Int(cellToDisplay.temp.avg))°C"
-            cell.pressureLabel.text = "\(Int(cellToDisplay.pressure)) hPa"
-        }
+        let cellToDisplay = daysArray[indexPath.row]
+            cell.dateLabel.text = cellToDisplay.compDate
+            cell.tempLabel.text = "\(cellToDisplay.averageTemp)°C"
+            cell.pressureLabel.text = "\(cellToDisplay.compPressure) hPa"
         
-        let iconID = weatherManager?.dayAtIndex(index: indexPath.row).weather.first?.icon
-        let url = URL(string: "https://openweathermap.org/img/w/\(iconID ?? "01n").png")
+        
+        let iconID = cellToDisplay.weatherIcon
+        let url = URL(string: "https://openweathermap.org/img/w/\(iconID).png")
         let data = try? Data(contentsOf: url!)
         cell.iconLabel.image = UIImage(data: data!)
         
@@ -64,10 +57,10 @@ class MainCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = collectionView.cellForItem(at: indexPath) as! WeatherCell
-        let dayDetails = weatherManager!.dayAtIndex(index: indexPath.row)
+        let dayDetails = daysArray[indexPath.row]
         selectedCell.backgroundColor = UIColor(white: 1, alpha: 0.25)
         
-        let alertString = "Temperature: \(Int(dayDetails.temp.min))°C - \(Int(dayDetails.temp.max))°C\nPressure: \(Int(dayDetails.pressure)) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.windSpeed) m/s\nWind Direction: \(weatherManager!.getWindDirectionString(index: indexPath.row))"
+        let alertString = "Temperature: \(dayDetails.minimumTemp)°C - \(dayDetails.maximumTemp)°C\nPressure: \(dayDetails.compPressure) hPa\nHumidity: \(dayDetails.humidity)%\nWind Speed: \(dayDetails.windSpeed) m/s\nWind Direction: \(dayDetails.windDirectionIcon)"
         
         let alert = UIAlertController(title: selectedCell.dateLabel.text, message: alertString, preferredStyle: .alert)
         let imageView = UIImageView(image: selectedCell.iconLabel.image)
