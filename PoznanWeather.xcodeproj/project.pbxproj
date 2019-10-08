@@ -19,16 +19,6 @@
 		B1C30B9F20C5D71000806FF4 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B16721D620C58BE40086B47A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B16721B920C58BE20086B47A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B16721C020C58BE20086B47A;
-			remoteInfo = PoznanWeather;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		15A08CFE221048290097240E /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
 		15A08D01221055410097240E /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +30,6 @@
 		B16721CB20C58BE40086B47A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B16721CE20C58BE40086B47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B16721D020C58BE40086B47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B16721D520C58BE40086B47A /* PoznanWeatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoznanWeatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B16721DB20C58BE40086B47A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1C30B9920C5D32600806FF4 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		B1C30B9E20C5D71000806FF4 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
@@ -48,13 +37,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		B16721BE20C58BE20086B47A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B16721D220C58BE40086B47A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				B16721C120C58BE20086B47A /* PoznanWeather.app */,
-				B16721D520C58BE40086B47A /* PoznanWeatherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,24 +149,6 @@
 			productReference = B16721C120C58BE20086B47A /* PoznanWeather.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B16721D420C58BE40086B47A /* PoznanWeatherTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B16721E120C58BE40086B47A /* Build configuration list for PBXNativeTarget "PoznanWeatherTests" */;
-			buildPhases = (
-				B16721D120C58BE40086B47A /* Sources */,
-				B16721D220C58BE40086B47A /* Frameworks */,
-				B16721D320C58BE40086B47A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B16721D720C58BE40086B47A /* PBXTargetDependency */,
-			);
-			name = PoznanWeatherTests;
-			productName = PoznanWeatherTests;
-			productReference = B16721D520C58BE40086B47A /* PoznanWeatherTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -198,12 +161,7 @@
 				TargetAttributes = {
 					B16721C020C58BE20086B47A = {
 						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1000;
-					};
-					B16721D420C58BE40086B47A = {
-						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1000;
-						TestTargetID = B16721C020C58BE20086B47A;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -221,7 +179,6 @@
 			projectRoot = "";
 			targets = (
 				B16721C020C58BE20086B47A /* PoznanWeather */,
-				B16721D420C58BE40086B47A /* PoznanWeatherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,13 +192,6 @@
 				15A08D00221048290097240E /* WeatherCollectionViewCell.xib in Resources */,
 				B16721CC20C58BE40086B47A /* Assets.xcassets in Resources */,
 				B16721CA20C58BE20086B47A /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B16721D320C58BE40086B47A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,22 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B16721D120C58BE40086B47A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B16721D720C58BE40086B47A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B16721C020C58BE20086B47A /* PoznanWeather */;
-			targetProxy = B16721D620C58BE40086B47A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B16721C820C58BE20086B47A /* Main.storyboard */ = {
@@ -349,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -403,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -419,13 +354,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = "$(SRCROOT)/PoznanWeather/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -437,59 +373,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C63X5Q2KR6;
 				INFOPLIST_FILE = "$(SRCROOT)/PoznanWeather/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeather";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		B16721E220C58BE40086B47A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C63X5Q2KR6;
-				INFOPLIST_FILE = PoznanWeatherTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeatherTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoznanWeather.app/PoznanWeather";
-			};
-			name = Debug;
-		};
-		B16721E320C58BE40086B47A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C63X5Q2KR6;
-				INFOPLIST_FILE = PoznanWeatherTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.adrian-kwiatkowski.PoznanWeatherTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoznanWeather.app/PoznanWeather";
 			};
 			name = Release;
 		};
@@ -510,15 +402,6 @@
 			buildConfigurations = (
 				B16721DF20C58BE40086B47A /* Debug */,
 				B16721E020C58BE40086B47A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B16721E120C58BE40086B47A /* Build configuration list for PBXNativeTarget "PoznanWeatherTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B16721E220C58BE40086B47A /* Debug */,
-				B16721E320C58BE40086B47A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
